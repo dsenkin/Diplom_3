@@ -30,11 +30,6 @@ public class ConstructorPage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
-    // Кликнуть по объекту с данным локатором
-    private void clickLocator(By locator) {
-        driver.findElement(locator).click();
-    }
-
     @Step("Нажатие на вкладку Булки")
     public void clickBunTab() {
         wait.until(ExpectedConditions.elementToBeClickable(bunTab)).click();

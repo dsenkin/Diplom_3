@@ -1,21 +1,18 @@
 package ru.yandex.practicum;
 
+import io.qameta.allure.Description;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.yandex.practicum.models.pageobject.ConstructorPage;
 import ru.yandex.practicum.models.pageobject.MainPage;
 import io.qameta.allure.junit4.DisplayName;
 
 import java.io.IOException;
-import java.util.Objects;
 
 import static ru.yandex.practicum.config.RestConfig.HOST;
 
 public class ConstructorPageTabsTests extends BaseTest {
-
-//    private WebDriver driver;
     private ConstructorPage constructorPage;
     private MainPage mainPage;
 
@@ -27,11 +24,12 @@ public class ConstructorPageTabsTests extends BaseTest {
         driver.get(HOST);
 
         mainPage.constructorModuleIsVisible();
-        Objects.requireNonNull(mainPage.wait.until(ExpectedConditions.elementToBeClickable(mainPage.constructorButton))).click();
+        mainPage.clickConstructorButton();
     }
 
     @Test
     @DisplayName("Переход к разделу Булки")
+    @Description("Проверка успешного перехода на вкладку Булки")
     public void stepIntoBunTabTest() {
         constructorPage.clickSauceTab();
         constructorPage.clickBunTab();
@@ -40,6 +38,7 @@ public class ConstructorPageTabsTests extends BaseTest {
 
     @Test
     @DisplayName("Переход к разделу Соусы")
+    @Description("Проверка успешного перехода на вкладку Соусы")
     public void stepIntoSauceTabTest() {
         constructorPage.clickSauceTab();
         Assert.assertTrue(constructorPage.isSauceSectionVisible());
@@ -47,6 +46,7 @@ public class ConstructorPageTabsTests extends BaseTest {
 
     @Test
     @DisplayName("Переход к разделу Начинки")
+    @Description("Проверка успешного перехода на вкладку Начинки")
     public void stepIntoFillingTabTest() {
         constructorPage.clickFillingTab();
         constructorPage.ingredientsListIsVisible();

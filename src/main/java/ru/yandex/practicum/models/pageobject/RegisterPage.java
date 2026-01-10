@@ -20,8 +20,8 @@ public class RegisterPage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
-    private final By nameField = By.xpath("//fieldset[1]//input");
-    private final By emailField = By.xpath("//fieldset[2]//input");
+    private final By nameField = By.xpath("//label[text()='Имя']/following-sibling::input");
+    private final By emailField = By.xpath("//label[text()='Email']/following-sibling::input");
     private final By passwordField = By.xpath("//input[@name='Пароль']");
     private final By registerButton = By.xpath("//button[text()='Зарегистрироваться']");
     private final By passwordErrorText = By.className("input__error");

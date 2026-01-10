@@ -3,7 +3,6 @@ package ru.yandex.practicum.models.pageobject;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -11,7 +10,6 @@ import java.time.Duration;
 
 public class ForgotPasswordPage {
     private WebDriver driver;
-    private WebElement element;
     private final WebDriverWait wait;
 
     public ForgotPasswordPage(WebDriver driver) {

@@ -1,5 +1,6 @@
 package ru.yandex.practicum;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Assert;
@@ -50,6 +51,7 @@ public class UserLoginTests extends BaseTest {
 
     @Test
     @DisplayName("вход по кнопке «Войти в аккаунт» на главной")
+    @Description("Проверка успешного входа пользователя по кнопке на главной странице, пользователь создается при помощи API")
     public void userLoginFromMainPageLoginButtonTest() {
         mainPage.clickLoginButton();
 
@@ -62,6 +64,7 @@ public class UserLoginTests extends BaseTest {
 
     @Test
     @DisplayName("вход через кнопку «Личный кабинет»")
+    @Description("Проверка успешного входа пользователя через кнопку Личный кабинет в шапке, пользователь создается при помощи API")
     public void userLoginFromHeaderButtonTest() {
         mainPage.clickHeaderLoginButton();
 
@@ -74,6 +77,7 @@ public class UserLoginTests extends BaseTest {
 
     @Test
     @DisplayName("вход через кнопку в форме регистрации")
+    @Description("Проверка успешного входа пользователя по кнопке в форме регистрации, пользователь создается при помощи API")
     public void userLoginFromRegistrationFormTest() {
         mainPage.clickHeaderLoginButton();
 
@@ -91,6 +95,7 @@ public class UserLoginTests extends BaseTest {
 
     @Test
     @DisplayName("вход через кнопку в форме восстановления пароля")
+    @Description("Проверка успешного входа пользователя по кнопке в форме восстановления пароля, пользователь создается при помощи API")
     public void userLoginFromForgotPasswordButtonTest() {
         mainPage.clickHeaderLoginButton();
 

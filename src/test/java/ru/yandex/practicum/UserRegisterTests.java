@@ -1,11 +1,11 @@
 package ru.yandex.practicum;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 import ru.yandex.practicum.data.UserData;
 import ru.yandex.practicum.models.UserModel;
 import ru.yandex.practicum.models.pageobject.LoginPage;
@@ -42,12 +42,13 @@ public class UserRegisterTests extends BaseTest {
 
     @Test
     @DisplayName("Пользователь может зарегистрироваться")
+    @Description("Проверка успешной регистрации пользователя, заполнены все поля, проверка по API, присвоен токен")
     public void successUserRegistrationTest() {
         mainPage.clickHeaderLoginButton();
         loginPage.clickRegistrationLink();
 
-        registerPage.fillName(user.getName());
         registerPage.fillEmail(user.getEmail());
+        registerPage.fillName(user.getName());
         registerPage.fillPassword(user.getPassword());
         registerPage.clickRegister();
 
@@ -57,6 +58,7 @@ public class UserRegisterTests extends BaseTest {
 
     @Test
     @DisplayName("Ошибка, пароль должен содержать не менее 6 символов")
+    @Description("Проверка появления ошибки при невалидном пароле, менее 6 символов")
     public void failedUserLoginWithPasswordLessSixCharTest() {
         String wrongPassword = "qwert"; // 5 символов
 
